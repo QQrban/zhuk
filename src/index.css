@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-school: "Schoolbell", cursive;
+
+  --color-yelloWW: #FFE500;
+  --color-reD: #FF0000;
+}
+
+@layer utilities {
+  .link {
+    transition: all;
+    transition-duration: 0.2s;
+  }
+  .link:hover {
+    color: var(--color-reD);
+  }
+}
