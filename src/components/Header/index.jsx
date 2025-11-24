@@ -18,7 +18,7 @@ export default function Header() {
           <a className="link" href="#about">
             About
           </a>
-          <a className="link" href="#">
+          <a className="link" href="#gallery">
             Gallery
           </a>
           <a className="link" href="#">
@@ -34,7 +34,7 @@ export default function Header() {
 
         <button
           onClick={toggleMenu}
-          className="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 z-50 relative"
+          className="md:hidden w-10 h-10 flex flex-col justify-center items-center gap-1.5 z-60 relative"
           aria-label="Toggle menu"
         >
           <span
@@ -55,15 +55,15 @@ export default function Header() {
         </button>
 
         <div
-          className={`fixed top-0 right-0 h-screen w-[280px] bg-black border-l-2 border-yelloWW transform transition-transform duration-300 ease-in-out md:hidden ${
+          className={`z-50 fixed top-0 right-0 h-screen w-[280px] bg-black border-l-2 border-yelloWW transform transition-transform duration-300 ease-in-out md:hidden ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <nav className="flex flex-col gap-8 text-white text-2xl pt-24 px-8">
-            <a className="link" href="#" onClick={toggleMenu}>
+            <a className="link" href="#about" onClick={toggleMenu}>
               About
             </a>
-            <a className="link" href="#" onClick={toggleMenu}>
+            <a className="link" href="#gallery" onClick={toggleMenu}>
               Gallery
             </a>
             <a className="link" href="#" onClick={toggleMenu}>

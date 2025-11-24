@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Schoolbell&display=swap');
 @import "tailwindcss";
-
 @theme {
   --font-school: "Schoolbell", cursive;
 
@@ -16,4 +15,21 @@
   .link:hover {
     color: var(--color-reD);
   }
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+}
+
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.embla__slide > img {
+  max-width: 400px;
 }

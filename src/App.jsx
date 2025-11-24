@@ -3,7 +3,10 @@ import bgImage from "./assets/bg.png";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import dividerRed from "./assets/dividerRed.png";
+import dividerBlack from "./assets/dividerBlack.png";
 import About from "./components/About";
+import Divider from "./components/divider";
+import Gallery from "./components/Gallery";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,15 +17,14 @@ function App() {
         style={{ backgroundImage: `url(${bgImage})` }}
         className="fixed inset-0 -z-10 bg-cover bg-center bg-no-repeat"
       />
-
       <div className="relative font-school">
         <Header />
         <main>
           <Hero />
-          <div className="pt-20">
-            <img className="w-full h-[90px] object-cover" src={dividerRed} alt="" />
-          </div>
+          <Divider src={dividerRed} />
           <About />
+          <Divider src={dividerBlack} />
+          <Gallery />
         </main>
       </div>
     </>
