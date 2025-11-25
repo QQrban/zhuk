@@ -25,11 +25,11 @@ export default function ImageModal({ image, onClose }) {
       onClick={onClose}
     >
       <div
-        className="relative max-w-[600px] rounded-lg shadow-2xl"
+        className="relative max-w-[90vw] md:max-w-[600px] rounded-lg shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
         <button
-          className="absolute -top-10 -right-10 text-white text-5xl font-light hover:text-gray-400 transition-colors cursor-pointer"
+          className="absolute top-2 right-2 md:-top-10 md:-right-10 text-white text-3xl md:text-5xl font-light hover:text-gray-400 transition-colors cursor-pointer z-10 bg-black/50 md:bg-transparent rounded-full w-10 h-10 md:w-auto md:h-auto flex items-center justify-center"
           onClick={onClose}
         >
           ×
@@ -38,7 +38,7 @@ export default function ImageModal({ image, onClose }) {
         <img
           src={image}
           alt=""
-          className="w-full h-full object-contain rounded-lg max-h-[70vh]"
+          className="w-full h-full object-contain rounded-lg max-h-[80vh] md:max-h-[70vh]"
         />
       </div>
     </div>
