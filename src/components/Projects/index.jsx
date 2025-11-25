@@ -8,7 +8,7 @@ export default function Projects() {
     {
       id: 1,
       image: bhBalta,
-      title: "Bad Habits",
+      title: "Bad Habits Baltijaama Turg",
       description:
         "American restaurant opened in 2024 in Tallinn, combining BBQ, street food, bakery, cocktail bar and merch shop. This is a place where gastronomy meets art: stylish interior, neon signs, vintage furniture and paintings by a famous Estonian artists, which create an unique atmosphere.",
       link: "https://badhabits.ee/goodtimes/en",
@@ -17,7 +17,7 @@ export default function Projects() {
     {
       id: 2,
       image: bhT1,
-      title: "Bad Habits",
+      title: "Bad Habits T1 Mall",
       description:
         "Bad Habits expands with a second location at T1 Mall in 2025, dedicated to authentic American pizza. This urban pizzeria combines traditional hand-tossed techniques with innovative flavor combinations, casual dining atmosphere, and bold street-style interior that brings the spirit of American pizza joints to Tallinn.",
       link: "https://badhabits.ee/funtown/en",
