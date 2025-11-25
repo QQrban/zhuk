@@ -10,7 +10,7 @@ import "./gallery.css";
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const settings = {
+  const desktopSettings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -30,6 +30,17 @@ export default function Gallery() {
     ],
   };
 
+  const mobileSettings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    autoplaySpeed: 4000,
+  };
+
   const slides = [];
   for (let i = 0; i < galleryImages.length; i += 7) {
     slides.push(galleryImages.slice(i, i + 7));
@@ -42,8 +53,9 @@ export default function Gallery() {
           Gallery
         </h2>
 
+        {/* desktop*/}
         <div className="hidden md:block">
-          <Slider {...settings}>
+          <Slider {...desktopSettings}>
             {slides.map((slideImages, index) => (
               <div key={index}>
                 <GallerySlide
@@ -55,8 +67,9 @@ export default function Gallery() {
           </Slider>
         </div>
 
+        {/* mobile */}
         <div className="block md:hidden">
-          <Slider {...settings}>
+          <Slider {...mobileSettings}>
             {galleryImages.map((image, index) => (
               <div key={index}>
                 <div
