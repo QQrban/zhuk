@@ -8,11 +8,13 @@ export default function Hero() {
         <div className="text-white max-w-[800px] xl:w-[650px] flex flex-col gap-[21px] text-center xl:text-start">
           <h1 className="text-[75px] xl:max-w-[400px] leading-25">Rock Your Taste Buds.</h1>
           <p className="text-[26px]">
-            A Tallinn-based <span className="text-yelloWW">restaurateur</span> and chef with deep
-            experience across the culinary world, from leading top Estonian kitchens as Head and
-            Executive Chef to{" "}
-            <span className="text-yelloWW">creating restaurant concepts from scratch</span>. Big
-            culinary experience, from street food to fine dining.
+            A Tallinn-based <span className="text-yelloWW">restaurateur</span> and chef with
+            wide-ranging experience across the culinary world — from leading top Estonian kitchens
+            as Head and Executive Chef to{" "}
+            <span className="text-yelloWW">building original restaurant concepts from scratch</span>
+            . My dedication to culinary excellence and innovative concepts continues to drive me
+            toward <span className="text-yelloWW">new projects</span> and{" "}
+            <span className="text-yelloWW">collaborations</span>.
           </p>
           <p className="text-[40px] text-yelloWW">Get ready to eat like a legend!</p>
         </div>
