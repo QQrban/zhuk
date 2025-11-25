@@ -24,10 +24,10 @@ export default function Gallery() {
         breakpoint: 1024,
         settings: {
           dots: false,
-          arrows: true,
-        },
-      },
-    ],
+          arrows: true
+        }
+      }
+    ]
   };
 
   const mobileSettings = {
@@ -38,7 +38,7 @@ export default function Gallery() {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 4000
   };
 
   const slides = [];
@@ -49,19 +49,14 @@ export default function Gallery() {
   return (
     <section id="gallery" className="pt-[21px] px-15">
       <div className="max-w-[1350px] mx-auto">
-        <h2 className="text-[70px] text-white text-center mb-8 max-md:text-[40px]">
-          Gallery
-        </h2>
+        <h2 className="text-[70px] text-white text-center mb-8 max-md:text-[40px]">Gallery</h2>
 
         {/* desktop*/}
-        <div className="hidden md:block">
+        <div className="hidden md:block scale-85">
           <Slider {...desktopSettings}>
             {slides.map((slideImages, index) => (
               <div key={index}>
-                <GallerySlide
-                  images={slideImages}
-                  onImageClick={setSelectedImage}
-                />
+                <GallerySlide images={slideImages} onImageClick={setSelectedImage} />
               </div>
             ))}
           </Slider>
@@ -77,11 +72,7 @@ export default function Gallery() {
                   onClick={() => setSelectedImage(image)}
                 >
                   <div className="h-full overflow-hidden rounded-lg">
-                    <img
-                      src={image}
-                      alt=""
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={image} alt="" className="w-full h-full object-cover" />
                   </div>
                 </div>
               </div>
@@ -90,10 +81,7 @@ export default function Gallery() {
         </div>
       </div>
 
-      <ImageModal
-        image={selectedImage}
-        onClose={() => setSelectedImage(null)}
-      />
+      <ImageModal image={selectedImage} onClose={() => setSelectedImage(null)} />
     </section>
   );
 }
