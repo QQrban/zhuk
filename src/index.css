@@ -17,6 +17,13 @@
   }
 }
 
+.hover_pointer:hover {
+  cursor: pointer;
+  scale: 1.06;
+  transition: all;
+  transition-duration: 0.4s;
+}
+
 .embla {
   overflow: hidden;
 }

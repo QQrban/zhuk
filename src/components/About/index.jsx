@@ -28,7 +28,7 @@ export default function About() {
             <span className="text-yelloWW"> Postres</span>, further refining my techniques and
             expanding my culinary horizons.
           </AboutItem>
-          <AboutItem src={morega} classes={`scale-90`}>
+          <AboutItem src={morega}>
             <span className="text-yelloWW">Every</span> project I create comes from genuine{" "}
             <span className="text-yelloWW">care</span> and full commitment. I focus on the details
             and the atmosphere so guests don’t just eat — they{" "}

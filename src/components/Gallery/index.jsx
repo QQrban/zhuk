@@ -1,16 +1,15 @@
+import { useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import bhskedami from "../../assets/bhskedami.jpg";
-import edabh from "../../assets/edabh.jpg";
-import zoloto from "../../assets/zoloto.jpg";
-import mickey from "../../assets/mickey.jpg";
-import lososik from "../../assets/lososik.png";
-import mylo from "../../assets/mylo.jpeg";
-import restoSnaruzhi from "../../assets/restoSnaruzhi.jpg";
-import restoVnutri from "../../assets/restoVnutri.jpg";
+import GallerySlide from "./GallerySlide";
+import ImageModal from "./ImageModal";
+import galleryImages from "./images";
+import "./gallery.css";
 
 export default function Gallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -19,46 +18,69 @@ export default function Gallery() {
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    autoplaySpeed: 3000
+    autoplaySpeed: 4000,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          dots: false,
+          arrows: true,
+        },
+      },
+    ],
   };
 
+  const slides = [];
+  for (let i = 0; i < galleryImages.length; i += 7) {
+    slides.push(galleryImages.slice(i, i + 7));
+  }
+
   return (
-    <section id="gallery" className="pt-[21px] px-4">
+    <section id="gallery" className="pt-[21px] px-15">
       <div className="max-w-[1350px] mx-auto">
-        <h2 className="text-[70px] text-white text-center mb-8">Gallery</h2>
+        <h2 className="text-[70px] text-white text-center mb-8 max-md:text-[40px]">
+          Gallery
+        </h2>
 
-        {/* <Slider {...settings}>
-          <div>
-            <div className="grid grid-cols-4 grid-rows-3 gap-2 h-[500px] md:h-[600px]">
-              <img
-                src={bhskedami}
-                className="col-span-2 row-span-2 w-full h-full object-cover rounded"
-              />
-              <img
-                src={edabh}
-                className="col-span-2 row-span-2 w-full h-full object-cover rounded"
-              />
-              <img
-                src={zoloto}
-                className="col-span-2 row-span-1 w-full h-full object-cover rounded"
-              />
-              <img src={mickey} className="w-full h-full object-cover rounded" />
-              <img src={lososik} className="w-full h-full object-cover rounded" />
-              <img src={mylo} className="col-span-2 w-full h-full object-cover rounded" />
-            </div>
-          </div>
+        <div className="hidden md:block">
+          <Slider {...settings}>
+            {slides.map((slideImages, index) => (
+              <div key={index}>
+                <GallerySlide
+                  images={slideImages}
+                  onImageClick={setSelectedImage}
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
 
-          <div>
-            <div className="grid grid-cols-4 grid-rows-3 gap-2 h-[500px] md:h-[600px]">
-              <img
-                src={restoSnaruzhi}
-                className="col-span-2 row-span-2 w-full h-full object-cover rounded"
-              />
-              <img src={restoVnutri} className="w-full h-full object-cover rounded" />
-            </div>
-          </div>
-        </Slider> */}
+        <div className="block md:hidden">
+          <Slider {...settings}>
+            {galleryImages.map((image, index) => (
+              <div key={index}>
+                <div
+                  className="sm:w-[400px] h-[400px] px-2 cursor-pointer mx-auto"
+                  onClick={() => setSelectedImage(image)}
+                >
+                  <div className="h-full overflow-hidden rounded-lg">
+                    <img
+                      src={image}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
       </div>
+
+      <ImageModal
+        image={selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </section>
   );
 }

@@ -10,7 +10,10 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 bg-black w-full px-4 z-50">
       <div className="flex justify-between items-center max-w-[1350px] mx-auto py-4">
-        <a href="#" className="text-yelloWW text-4xl lg:text-[53px] block z-50">
+        <a
+          href="#"
+          className="text-yelloWW text-4xl lg:text-[53px] block z-50"
+        >
           Dmitri Zhuk
         </a>
 
@@ -21,13 +24,13 @@ export default function Header() {
           <a className="link" href="#gallery">
             Gallery
           </a>
-          <a className="link" href="#">
+          <a className="link" href="#projects">
             Projects
           </a>
-          <a className="link" href="#">
+          <a className="link" href="#services">
             Services
           </a>
-          <a className="link" href="#">
+          <a className="link" href="#contact">
             Contact
           </a>
         </nav>
@@ -66,19 +69,24 @@ export default function Header() {
             <a className="link" href="#gallery" onClick={toggleMenu}>
               Gallery
             </a>
-            <a className="link" href="#" onClick={toggleMenu}>
+            <a className="link" href="#projects" onClick={toggleMenu}>
               Projects
             </a>
-            <a className="link" href="#" onClick={toggleMenu}>
+            <a className="link" href="#services" onClick={toggleMenu}>
               Services
             </a>
-            <a className="link" href="#" onClick={toggleMenu}>
+            <a className="link" href="#contact" onClick={toggleMenu}>
               Contact
             </a>
           </nav>
         </div>
 
-        {isMenuOpen && <div className="fixed inset-0 bg-black/50 md:hidden" onClick={toggleMenu} />}
+        {isMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 md:hidden"
+            onClick={toggleMenu}
+          />
+        )}
       </div>
     </header>
   );

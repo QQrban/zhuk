@@ -1,4 +1,3 @@
-import { useState } from "react";
 import bgImage from "./assets/bg.png";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -7,10 +6,11 @@ import dividerBlack from "./assets/dividerBlack.png";
 import About from "./components/About";
 import Divider from "./components/divider";
 import Gallery from "./components/Gallery";
+import Projects from "./components/Projects";
+import Services from "./components/Services";
+import Contact from "./components/Contact";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
       <div
@@ -25,6 +25,12 @@ function App() {
           <About />
           <Divider src={dividerBlack} />
           <Gallery />
+          <Divider src={dividerRed} />
+          <Projects />
+          <Divider src={dividerBlack} />
+          <Services />
+          <Divider src={dividerRed} />
+          <Contact />
         </main>
       </div>
     </>
