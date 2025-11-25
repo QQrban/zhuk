@@ -43,7 +43,7 @@ export default function Services() {
           Services
         </h2>
 
-        <div className="flex flex-wrap justify-between gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center xl:justify-between gap-6 lg:gap-8">
           {services.map((service) => (
             <div
               key={service.id}
